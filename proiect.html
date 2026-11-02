@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f6;--surf:#fff;--ink:#0f2a44;--mut:#4d6478;--aq:#12a6ba;--aq2:#d8f1f5;--am:#f2b134;--line:#d3dee6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1b2b;--surf:#122a40;--ink:#e8f1f7;--mut:#9db3c4;--aq:#3cc9dc;--aq2:#143a4b;--line:#25415a}}
+:root[data-theme="dark"]{--bg:#0c1b2b;--surf:#122a40;--ink:#e8f1f7;--mut:#9db3c4;--aq:#3cc9dc;--aq2:#143a4b;--line:#25415a}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+.w{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;gap:18px;align-items:center;height:56px;overflow-x:auto;white-space:nowrap}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;margin-right:auto}
+nav a{color:var(--mut);text-decoration:none;font-weight:500;font-size:15px}nav a:hover,nav a:focus-visible{color:var(--aq)}
+.hero{padding:56px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(40px,8vw,84px);font-weight:800;max-width:11em}
+.hero p{max-width:34em;color:var(--mut);font-size:19px;margin:20px 0 28px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:13px 24px;border-radius:999px;text-decoration:none;font-weight:600}
+.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--aq);outline-offset:3px}
+.car{display:block;width:100%;max-width:900px;margin:36px auto 0}
+.shine{animation:sw 2.4s .6s ease-out 1 both}
+@keyframes sw{from{transform:translateX(-260px)}to{transform:translateX(900px)}}
+@media (prefers-reduced-motion:reduce){.shine{animation:none;opacity:0}}
+section{padding:72px 0}
+section h2{font-size:clamp(30px,5vw,48px);font-weight:800;margin-bottom:24px}
+.txt{max-width:42em}.txt p{margin:0 0 16px}
+.band{background:#0f2a44;color:#e8f1f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band{background:#081624}}
+:root[data-theme="dark"] .band{background:#081624}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:32px 0}
+.c{background:var(--surf);border:1px solid var(--line);border-radius:18px;padding:24px;color:var(--ink)}
+.c h3{font-size:22px;margin:0 0 6px}.c p{margin:0;color:var(--mut);font-size:16px}
+.pk{position:relative}.pr{font:800 40px "Bricolage Grotesque",sans-serif;margin:6px 0 10px}
+.pr small{font:500 15px Figtree,sans-serif;color:var(--mut)}
+.pk ul{padding-left:18px;margin:12px 0 0;color:var(--mut);font-size:15px}
+.pk.top{border:2px solid var(--aq)}.tag{position:absolute;top:-13px;right:18px;background:var(--am);color:#0f2a44;font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:420px;background:var(--surf);color:var(--ink);border-radius:14px;overflow:hidden}
+th,td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--line);font-size:15px}th:first-child,td:first-child{text-align:left}
+th{background:var(--aq2);font-weight:600}
+.bar{display:flex;height:46px;border-radius:12px;overflow:hidden;font:600 14px Figtree,sans-serif;margin:8px 0 6px}
+.bar span{display:grid;place-items:center;white-space:nowrap}
+.b1{background:var(--am);color:#0f2a44}.b2{background:var(--aq);color:#06222b}
+.calc{display:grid;gap:18px;grid-template-columns:1.1fr .9fr;margin-top:28px}
+@media(max-width:760px){.calc{grid-template-columns:1fr}}
+.row label{display:flex;justify-content:space-between;font-weight:600;font-size:15px}
+input[type=range]{width:100%;accent-color:var(--aq)}
+.res div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+.res .big{border:0;padding-top:16px;font:800 30px "Bricolage Grotesque",sans-serif}.res .big span:last-child{color:var(--aq)}
+.note{font-size:14px;color:var(--mut);margin-top:12px}
+.team .c{text-align:center}.av{width:64px;height:64px;border-radius:50%;background:var(--aq2);margin:0 auto 10px;display:grid;place-items:center;font:800 22px "Bricolage Grotesque",sans-serif;color:var(--aq)}
+footer{padding:36px 0;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:600px){body{font-size:16px}section{padding:48px 0}.w{padding:0 16px}.hero{padding-top:36px}.hero p{font-size:17px}.grid{margin:24px 0;gap:14px}.c{padding:18px}.pr{font-size:34px}table{min-width:0}th,td{padding:10px 8px;font-size:14px}.res .big{font-size:24px}.bar{font-size:12px}.team .grid{grid-template-columns:1fr 1fr}.team .c:last-child{grid-column:1/-1}.av{width:52px;height:52px;font-size:18px}.tag{right:12px}}
+</style>
+</head>
+<body>
+<nav><div class="w"><b>RCDDV DetailX</b><a href="#clienti">Ce facem</a><a href="#nevoi">Nevoi</a><a href="#oferta">Oferta</a><a href="#preturi">Prețuri</a><a href="#profit">Profit</a><a href="#echipa">Echipa</a></div></nav>
+
+<header class="hero"><div class="w">
+<h1>Mașina ta, ca în prima zi.</h1>
+<p>RCDDV DetailX, întreține și îngrijește autoturismele, la interior și la exterior.</p>
+<a class="btn" href="#oferta">Vezi pachetele</a>
+<img src="imagini/da.jpg"  width="500">
+<defs><linearGradient id="bd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fb7cb"/><stop offset="1" stop-color="#0c6f84"/></linearGradient>
+<linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="cl"><path id="bp" d="M60 190c0-26 14-40 44-46l130-28c26-26 60-44 104-44h130c52 0 90 20 128 58l110 18c40 8 62 22 62 52v14H60z"/></clipPath></defs>
+<ellipse cx="450" cy="248" rx="380" ry="16" fill="#0f2a44" opacity=".15"/>
+<use href="#bp" fill="url(#bd)"/>
+<path d="M270 122c18-20 46-34 78-34h118v46H262z M490 88h40c34 0 64 14 92 46H490z" fill="#d8f1f5" opacity=".92"/>
+<path d="M60 196h780" stroke="#0a5668" stroke-width="3"/>
+<g clip-path="url(#cl)"><rect class="shine" x="-200" y="40" width="130" height="200" fill="url(#sh)" transform="skewX(-20)"/></g>
+<g><circle cx="215" cy="214" r="46" fill="#0f2a44"/><circle cx="215" cy="214" r="24" fill="#c9d8e2"/><circle cx="215" cy="214" r="8" fill="#0f2a44"/>
+<circle cx="685" cy="214" r="46" fill="#0f2a44"/><circle cx="685" cy="214" r="24" fill="#c9d8e2"/><circle cx="685" cy="214" r="8" fill="#0f2a44"/></g>
+<path d="M820 176h20v14h-20z" fill="#f2b134"/>
+<g fill="#fff" opacity=".9"><path d="M770 50c6 9 9 14 9 20a9 9 0 1 1-18 0c0-6 3-11 9-20z"/><path d="M830 98c5 8 7 11 7 16a7 7 0 1 1-14 0c0-5 2-8 7-16z"/><path d="M118 74c6 9 9 14 9 20a9 9 0 1 1-18 0c0-6 3-11 9-20z"/></g>
+</svg>
+</div></header>
+
+<section id="clienti"><div class="w">
+<h2>Ce facem pentru clienți?</h2>
+<div class="txt">
+<p>Firma noastră activează în domeniul detailingului auto și are ca scop principal oferirea unor servicii de curățare, întreținere și îngrijire a autoturismelor. Ne dorim să oferim clienților o experiență cât mai bună și să îi ajutăm să își păstreze mașinile într-o stare cât mai bună, atât la interior, cât și la exterior.</p>
+<p>Printre serviciile pe care le oferim se numără spălarea exterioară a mașinii, curățarea interiorului, aspirarea scaunelor și a covorașelor, curățarea bordului și a geamurilor. De asemenea, oferim servicii mai complexe, precum curățarea în profunzime a tapițeriei, polish auto și aplicarea unor produse speciale pentru protejarea vopselei.</p>
+<p>Un lucru important pentru firma noastră este calitatea serviciilor. Folosim produse profesionale și echipamente potrivite pentru fiecare tip de suprafață, astfel încât să obținem rezultate bune fără să deteriorăm componentele mașinii.</p>
+<p>Pe lângă serviciile propriu-zise, vrem să oferim și o relație cât mai bună cu fiecare client. Înainte de începerea lucrării, discutăm cu acesta pentru a afla ce își dorește și îi explicăm ce operațiuni urmează să realizăm. Respectăm programările și încercăm să terminăm fiecare lucrare în timpul stabilit.</p>
+<p>Ne dorim ca persoanele care aleg firma noastră să fie mulțumite de rezultate și să revină atunci când au nevoie de alte servicii. Considerăm că atenția la detalii, seriozitatea și calitatea muncii sunt lucrurile care ne pot diferenția de alte firme din acest domeniu.</p>
+</div></div></section>
+
+<section id="nevoi" class="band"><div class="w">
+<h2>Identificarea nevoilor clientului</h2>
+<div class="txt">
+<p>Pentru ca firma noastră să aibă succes, trebuie să înțelegem foarte bine nevoile clienților. Fiecare persoană are așteptări diferite atunci când vine vorba despre îngrijirea mașinii, iar rolul nostru este să aflăm ce își dorește fiecare și să găsim cea mai potrivită soluție.</p>
+<p>De exemplu, o persoană care folosește mașina zilnic pentru a merge la serviciu poate avea nevoie doar de o spălare exterioară și de o curățare obișnuită a interiorului. În schimb, o familie cu copii poate avea nevoie de o curățare mai amănunțită a scaunelor și a tapițeriei, deoarece acestea se pot murdări mai repede. De asemenea, o persoană pasionată de mașini poate fi interesată de servicii mai complexe, precum polishul sau protecția ceramică a vopselei.</p>
+<p>Pentru a identifica aceste nevoi, vom discuta cu fiecare client înainte de începerea lucrării. Îl vom întreba ce probleme are mașina, ce servicii dorește și ce buget are disponibil. Vom analiza și starea autoturismului pentru a putea recomanda serviciile potrivite.</p>
+<p>Un alt aspect important este să ținem cont de timpul pe care clientul îl are la dispoziție. Unele persoane au nevoie de mașină cât mai repede, așa că trebuie să le comunicăm de la început cât va dura lucrarea.</p>
+<p>Considerăm că este foarte important să ascultăm părerile clienților și să nu le recomandăm servicii de care nu au nevoie. Vrem să le oferim soluții potrivite, în funcție de starea mașinii și de posibilitățile lor financiare.</p>
+<p>Prin identificarea corectă a nevoilor, putem câștiga încrederea clienților și putem construi o relație de lungă durată cu aceștia. Un client care simte că este ascultat și respectat va avea mai multe motive să aleagă din nou serviciile firmei noastre.</p>
+</div></div></section>
+
+<section id="oferta"><div class="w">
+<h2>Crearea ofertei pentru clienți</h2>
+<div class="txt">
+<p>După ce identificăm nevoile clienților, următorul pas este să creăm o ofertă potrivită pentru fiecare persoană. Oferta reprezintă serviciile pe care firma noastră le propune clientului, împreună cu prețul și timpul necesar pentru realizarea acestora.</p>
+<p>Pentru a face alegerea mai ușoară, firma noastră va avea trei pachete principale de servicii.</p>
+</div>
+<div class="grid">
+<div class="c pk"><h3>Basic</h3><div class="pr">~100 lei</div><p>Pentru o curățare obișnuită a mașinii.</p><ul><li>Spălare exterioară</li><li>Aspirarea interiorului</li><li>Curățarea bordului</li><li>Curățarea geamurilor</li></ul></div>
+<div class="c pk top"><span class="tag">Pentru toată ziua</span><h3>Premium</h3><div class="pr">~200 lei</div><p>Tot ce are Basic, plus mai mult.</p><ul><li>Operațiunile din pachetul Basic</li><li>Curățare mai amănunțită a interiorului</li><li>Curățarea jantelor</li><li>Îngrijirea suprafețelor din mașină</li></ul></div>
+<div class="c pk"><h3>Full Detailing</h3><div class="pr">de la 350 lei</div><p>Îngrijire completă a autoturismului.</p><ul><li>Curățare în profunzime a interiorului</li><li>Curățarea tapițeriei</li><li>Polish auto</li><li>Produse speciale pentru protejarea caroseriei</li></ul></div>
+</div>
+<div class="txt">
+<p>Pe lângă aceste pachete, clienții vor putea solicita și servicii individuale. De exemplu, dacă o persoană dorește doar curățarea tapițeriei sau doar un polish, nu va fi obligată să aleagă un pachet complet.</p>
+<p>Oferta va fi adaptată în funcție de dimensiunea mașinii, starea acesteia și serviciile solicitate. Înainte de începerea lucrării, clientul va afla exact ce operațiuni vom realiza și cât va trebui să plătească.</p>
+<p>Prin această organizare, dorim să oferim variante pentru toate categoriile de clienți, indiferent de buget sau de tipul mașinii. Considerăm că o ofertă bine realizată trebuie să fie clară, atractivă și să răspundă unor nevoi reale.</p>
+</div></div></section>
+
+<section id="preturi" class="band"><div class="w">
+<h2>Stabilirea prețurilor</h2>
+<div class="txt">
+<p>Stabilirea prețurilor este una dintre cele mai importante etape în organizarea firmei noastre. Trebuie să găsim un echilibru între prețurile accesibile pentru clienți și cheltuielile pe care le avem pentru realizarea serviciilor. Dacă prețurile sunt prea mari, putem pierde clienți, iar dacă sunt prea mici, există riscul să nu reușim să acoperim toate costurile.</p>
+<p>Pentru a stabili prețurile, vom lua în calcul mai mulți factori. Printre aceștia se numără costul produselor de curățare, consumul de apă și energie electrică, timpul necesar pentru fiecare lucrare și uzura echipamentelor. De asemenea, trebuie să ținem cont de calitatea produselor folosite și de complexitatea serviciilor.</p>
+<p>Pentru început, ne propunem să avem următoarele prețuri orientative:</p>
+</div>
+<div class="tw" style="margin:18px 0 24px"><table>
+<tr><th>Serviciu</th><th>Preț orientativ</th></tr>
+<tr><td>Pachet Basic</td><td>aprox. 100 lei</td></tr>
+<tr><td>Pachet Premium</td><td>aprox. 200 lei</td></tr>
+<tr><td>Pachet Full Detailing</td><td>de la 350 lei</td></tr>
+<tr><td>Polish auto (serviciu individual)</td><td>de la 200 lei</td></tr>
+<tr><td>Curățarea tapițeriei (serviciu individual)</td><td>de la 120 lei</td></tr>
+</table></div>
+<div class="txt">
+<p>Aceste prețuri pot varia în funcție de dimensiunea autoturismului și de gradul de murdărie. De exemplu, o mașină mai mare sau una care necesită o curățare foarte amănunțită poate avea un preț mai ridicat.</p>
+<p>Pe lângă prețurile obișnuite, dorim să organizăm și diferite promoții. Putem oferi reduceri clienților noi, oferte pentru persoanele care aleg mai multe servicii și discounturi pentru clienții fideli.</p>
+<p>Considerăm că este important ca prețurile să fie prezentate transparent, astfel încât fiecare client să știe pentru ce plătește. Vrem să oferim servicii de calitate la prețuri corecte, astfel încât oamenii să considere că merită să apeleze la firma noastră.</p>
+</div></div></section>
+
+<section id="profit"><div class="w">
+<h2>Profitul firmei și satisfacția clienților</h2>
+<div class="txt">
+<p>Pentru ca firma noastră să funcționeze și să se dezvolte, trebuie să urmărim cu atenție veniturile, cheltuielile și profitul. Profitul reprezintă suma care rămâne firmei după scăderea tuturor cheltuielilor din veniturile obținute.</p>
+<p>Pentru a înțelege mai bine cum funcționează acest lucru, putem lua ca exemplu pachetul Full Detailing, care costă 350 de lei. Pentru realizarea acestui serviciu, firma poate cheltui aproximativ 35 de lei pe produse de curățare, 15 lei pe apă și energie electrică și încă 10 lei pe alte materiale consumabile. Astfel, cheltuielile directe ajung la 60 de lei pentru o mașină.</p>
+</div>
+<div class="bar" role="img" aria-label="Din 350 lei, 60 lei sunt cheltuieli directe și 290 lei rămân"><span class="b1" style="width:17.14%">60</span><span class="b2" style="width:82.86%">290 lei rămân</span></div>
+<p class="note" style="margin:0 0 24px">Un Full Detailing de 350 lei: 60 lei cheltuieli directe (35 produse + 15 apă și energie + 10 consumabile).</p>
+<div class="txt">
+<p>Dacă scădem aceste cheltuieli din prețul serviciului, obținem 290 de lei. Această sumă nu reprezintă însă profitul final, deoarece mai trebuie să plătim chiria spațiului, salariile, întreținerea echipamentelor și alte cheltuieli ale firmei.</p>
+<p>Dacă realizăm zece servicii Full Detailing într-o lună, veniturile totale vor fi de 3.500 de lei. Cheltuielile directe vor fi de 600 de lei, iar diferența va fi de 2.900 de lei. Din această sumă se scad în continuare celelalte cheltuieli și taxele pentru a calcula profitul real.</p>
+</div>
+<div class="calc">
+<div class="c"><div class="row"><label for="n">Servicii Full Detailing pe lună <span id="vn"></span></label><input id="n" type="range" min="1" max="40" value="10"></div>
+<p class="note">Mută cursorul și vezi cum se schimbă veniturile.</p></div>
+<div class="c res" aria-live="polite">
+<div><span>Venituri totale</span><span id="rv"></span></div>
+<div><span>Cheltuieli directe</span><span id="rc"></span></div>
+<div class="big"><span>Diferența</span><span id="rd"></span></div>
+</div></div>
+<div class="txt" style="margin-top:28px">
+<p>Pe lângă partea financiară, un alt lucru foarte important este păstrarea unei relații bune cu clienții. Ne dorim ca fiecare persoană să fie mulțumită de serviciile primite și să aibă încredere în firma noastră. Pentru acest lucru, vom respecta programările, vom lucra cu atenție și vom ține cont de părerile și sugestiile clienților.</p>
+<p>Considerăm că succesul unei firme nu depinde doar de banii câștigați, ci și de reputația pe care o construiește. Un client mulțumit poate recomanda serviciile noastre altor persoane, ceea ce ne poate ajuta să atragem mai mulți clienți și să dezvoltăm afacerea pe termen lung.</p>
+</div></div></section>
+
+<section id="echipa" class="team band"><div class="w">
+<h2>Echipa</h2>
+<div class="grid">
+<div class="c"><div class="av">1</div><h3>Andrada</h3><p></p></div>
+<div class="c"><div class="av">2</div><h3>David</h3><p></p></div>
+<div class="c"><div class="av">3</div><h3>Laurentiu</h3><p></p></div>
+<div class="c"><div class="av">4</div><h3>Marin</h3><p></p></div>
+<div class="c"><div class="av">5</div><h3>Sergiu</h3><p></p></div>
+</div></div></section>
+
+<footer><div class="w"></div></footer>
+
+<script>
+(function(){
+var f=function(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")};
+var s=document.getElementById("n");
+function u(){var n=+s.value;
+document.getElementById("vn").textContent=n;
+document.getElementById("rv").textContent=f(n*350)+" lei";
+document.getElementById("rc").textContent=f(n*60)+" lei";
+document.getElementById("rd").textContent=f(n*290)+" lei";}
+s.addEventListener("input",u);u();
+})();
+</script>
+</body>
+</html>
